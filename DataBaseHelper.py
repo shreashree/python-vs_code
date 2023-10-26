@@ -13,7 +13,7 @@ class DBHelper:
         query="insert into crudOp(userId, userName, phone) values({}, '{}', '{}' )".format(
             userId, userName, phone
         )
-        # print(query)
+      
         cur = self.con.cursor()
         cur.execute(query)
         self.con.commit()
@@ -25,7 +25,7 @@ class DBHelper:
         cur = self.con.cursor()
         cur.execute(query)
         for row in cur:
-            # print(row )
+            
             print("User Id :", row[0])
             print("User Name : ", row[1])
             print("phone : ", row[2])
@@ -34,7 +34,7 @@ class DBHelper:
     # deleting data
     def deleteUser(self, userId):
         del_query="delete from crudOp where userId={}".format(userId)
-        print(del_query)
+       
         cur = self.con.cursor()
         cur.execute(del_query)
         self.con.commit()
@@ -43,7 +43,7 @@ class DBHelper:
     # updating data
     def updateData(self, userId, userName):
         query="update crudOp set userName='{}' where userId={}".format(userName, userId)
-        print(query)
+    
         cur = self.con.cursor()
         cur.execute(query)
         self.con.commit()
